@@ -3,12 +3,21 @@
   "version": "0.0.1",
   "description": "Smart multi-gang enumerator with global, namespaced event emission for node.js.",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
   "scripts": {
     "test": "xo && snyk test && nyc ava",
+    "doc-serve": "documentation serve --watch --theme node_modules/documentation-theme-bespoke --github --config src/docs/documentation.yml --name $npm_package_name  --project-version $npm_package_version src/index.js",
+    "doc-build": "documentation build --format html --output docs --theme node_modules/documentation-theme-bespoke --github --config src/docs/documentation.yml --name $npm_package_name  --project-version $npm_package_version src/index.js",
+    "readme": "compile-readme -u src/docs/example.js src/docs/readme.md > readme.md",
     "code-climate": "nyc report --reporter=text-lcov | codeclimate-test-reporter",
     "coverage": "nyc ava && nyc report --reporter=lcov --report-dir test/coverage; open test/coverage/lcov-report/index.html",
     "clean": "gulp clean",
-    "doc-serve": "documentation serve -p -w --name n-selector src/**/*.js -c src/docs/documentation.yml &",
     "postpublish": "greenkeeper-postpublish"
   },
   "repository": {
@@ -108,12 +117,9 @@
       ]
     ]
   },
-  "buildNumber": 2,
+  "buildNumber": 5,
   "engines": {
-    "node": ">=4.0 <7.0"
+    "node": ">=4.0 <8.0"
   },
-  "jsnext:main": "lib/index-es.js",
-  "directories": {
-    "test": "test"
-  }
+  "jsnext:main": "lib/index-es.js"
 }
