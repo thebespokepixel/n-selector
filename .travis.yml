@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - 4
+  - 5
+  - stable
+sudo: false
+before_install: npm i -g npm@latest
+notifications:
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/d0418713e51ac049564a
+    on_success: always
+    on_failure: change
+    on_start: never
+addons:
+    code_climate:
+      repo_token: d561d79356a960a82869a05d3d7f941ad652ee4f569b14a1838e5927d3b8a4d9
+after_script:
+  - nyc report --reporter=text-lcov | codeclimate-test-reporter
