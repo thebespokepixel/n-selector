@@ -9,7 +9,11 @@ const cordial = require('@thebespokepixel/cordial')()
 
 // transpilation/formatting
 gulp.task('bundle', cordial.macro({
-	master: false,
+	source: 'src/lib/index.js'
+}).bundle())
+
+gulp.task('master', cordial.macro({
+	master: true,
 	source: 'src/lib/index.js'
 }).bundle())
 

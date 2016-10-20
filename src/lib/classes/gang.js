@@ -5,18 +5,14 @@
  * This is a test.
  */
 
-class Mode {
-	constructor(mode = 'soft', index = false) {
-		this.modes = [
-			'soft',
-			'hard',
-			'container',
-			'keep'
-		]
+import EventEmitter from 'events'
 
-		this.selection =
-
-		this.hyphenation = hyphenation
+class Gang extends EventEmitter {
+	constructor(selections, index = 0, primaryIndex = false) {
+		super()
+		this.selections = selections
+		this.index = index
+		this.isPrimaryIndex = primaryIndex
 
 		this.mode = (function () {
 			switch (mode) {

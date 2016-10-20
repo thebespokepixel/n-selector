@@ -4,8 +4,12 @@
   "description": "Smart multi-gang enumerator with global, namespaced event emission for node.js.",
   "main": "index.js",
   "scripts": {
-    "test": "xo",
-    "doc-serve": "documentation serve -p -w --name n-selector src/**/*.js -c src/docs/documentation.yml &"
+    "test": "xo && snyk test && nyc ava",
+    "code-climate": "nyc report --reporter=text-lcov | codeclimate-test-reporter",
+    "coverage": "nyc ava && nyc report --reporter=lcov --report-dir test/coverage; open test/coverage/lcov-report/index.html",
+    "clean": "gulp clean",
+    "doc-serve": "documentation serve -p -w --name n-selector src/**/*.js -c src/docs/documentation.yml &",
+    "postpublish": "greenkeeper-postpublish"
   },
   "repository": {
     "type": "git",
@@ -21,27 +25,95 @@
     "url": "https://github.com/MarkGriffiths/n-selector/issues"
   },
   "homepage": "https://github.com/MarkGriffiths/n-selector#readme",
+  "copyright": {
+    "year": "2016",
+    "owner": "Mark Griffiths @ The Bespoke Pixel"
+  },
   "devDependencies": {
-    "@thebespokepixel/cordial": "^0.16.4",
+    "@thebespokepixel/cordial": "^0.17.9",
     "ava": "^0.16.0",
-    "codeclimate-test-reporter": "^0.3.3",
-    "documentation": "^4.0.0-beta10",
+    "codeclimate-test-reporter": "^0.4.0",
+    "documentation": "^4.0.0-beta11",
+    "documentation-theme-bespoke": "^0.2.3",
+    "greenkeeper-postpublish": "^1.0.1",
     "gulp": "github:gulpjs/gulp#4.0",
-    "nyc": "^8.3.0",
-    "shelljs": "^0.7.4",
+    "nyc": "^8.3.2",
     "snyk": "^1.19.1",
-    "xo": "^0.16.0"
+    "xo": "^0.17.0"
   },
   "xo": {
     "semicolon": false,
-    "esnext": true
+    "esnext": true,
+    "ignores": [
+      "index.js",
+      "lib/*",
+      "bin/*",
+      "test/coverage/**"
+    ]
   },
   "dependencies": {
     "sparkles": "^1.0.0"
   },
-  "buildNumber": 1,
+  "badges": {
+    "github": "MarkGriffiths",
+    "npm": "thebespokepixel",
+    "name": "n-selector",
+    "style": "flat",
+    "providers": {
+      "status": {
+        "text": "beta",
+        "color": "blue"
+      },
+      "aux1": {
+        "title": "github",
+        "text": "source",
+        "color": "4E73B6",
+        "link": "https://github.com/MarkGriffiths/n-selector"
+      }
+    },
+    "readme": {
+      "Status": [
+        [
+          "status",
+          "npm",
+          "travis",
+          "david"
+        ],
+        [
+          "code-climate",
+          "code-climate-coverage",
+          "snyk"
+        ]
+      ],
+      "Developer": [
+        "david-dev",
+        "rollup"
+      ],
+      "Help": [
+        "inch",
+        "gitter"
+      ]
+    },
+    "docs": [
+      [
+        "aux1",
+        "travis"
+      ],
+      [
+        "code-climate",
+        "code-climate-coverage"
+      ],
+      [
+        "david"
+      ]
+    ]
+  },
+  "buildNumber": 2,
   "engines": {
     "node": ">=4.0 <7.0"
   },
-  "jsnext:main": "lib/index-es.js"
+  "jsnext:main": "lib/index-es.js",
+  "directories": {
+    "test": "test"
+  }
 }

@@ -8,15 +8,18 @@
 
 import sparkles from 'sparkles'
 
-import {uuid} from './uuid'
-import {addGang} from './classes/gang'
+import {uuid} from './lib/uuid'
+import {addGang} from './lib/classes/gang'
 
 class NSelector {
-	constructor (matrix, selection, ns) {
-		this.gang = uuid()
+	constructor(matrix, selection, ns) {
+		this.gangID = uuid()
 	}
 }
 
 export function createSelector(matrix, selection = 0, ns) {
-	 return new NSelector()
+	if (matrix === undefined || !Array.isArray(matrix)) {
+		throw new Error('Selector requires an array (or an array of arrays) as the first parameter.')
+	}
+	return new NSelector(matrix, selection, ns)
 }

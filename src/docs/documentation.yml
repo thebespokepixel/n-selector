@@ -1,3 +1,9 @@
 toc:
-  - module:n-selector
+  - name: "Usage"
+    example: "src/docs/example.js"
+  - name: "Configuration"
+    description: |
+      In `package.json`...
+  - name: "API"
+    description: |
 
