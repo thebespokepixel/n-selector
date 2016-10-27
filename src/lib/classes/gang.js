@@ -32,7 +32,7 @@ export class Gang {
 	}
 
 	position(idx) {
-		return this.indexOf(idx)/this.members.length
+		return this.indexOf(idx) / this.members.length
 	}
 
 	indexOfMember(id) {

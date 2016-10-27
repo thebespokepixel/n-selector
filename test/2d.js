@@ -1,7 +1,6 @@
 import test from 'ava'
 import sparkles from 'sparkles'
-import pkg from '../package.json'
-import {NSelector, createSelector} from '..'
+import {createSelector} from '..'
 
 test(`Simple 2d matrix`, t => {
 	const matrix = createSelector([['one', 'two', 'three'], ['red', 'green', 'blue']], 'two')
@@ -12,7 +11,6 @@ test(`Assymetric 2d matrix`, t => {
 	const matrix = createSelector([['one', 'two', 'three', 'four'], ['red', 'green', 'blue']], 'three')
 	t.deepEqual(matrix.selected, ['three', 'green'])
 })
-
 
 test(`Simple 2d matrix with select`, t => {
 	t.plan(3)
@@ -34,7 +32,6 @@ test.cb(`Simple 2d matrix with select and named emission`, t => {
 	})
 
 	matrix.select('three')
-
 })
 
 test.cb(`Simple 2d matrix with select and direct emission`, t => {
@@ -48,5 +45,4 @@ test.cb(`Simple 2d matrix with select and direct emission`, t => {
 	})
 
 	matrix.select(2)
-
 })

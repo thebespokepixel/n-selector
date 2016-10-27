@@ -1,7 +1,6 @@
 import test from 'ava'
 import sparkles from 'sparkles'
-import pkg from '../package.json'
-import {NSelector, createSelector} from '..'
+import {createSelector} from '..'
 
 test(`Simple 1d matrix`, t => {
 	const matrix = createSelector(['one', 'two', 'three'], 0)
@@ -28,7 +27,6 @@ test.cb(`Simple 1d matrix with select and named emission`, t => {
 	})
 
 	matrix.select(0)
-
 })
 
 test.cb(`Simple 1d matrix with select and direct emission`, t => {
@@ -42,5 +40,4 @@ test.cb(`Simple 1d matrix with select and direct emission`, t => {
 	})
 
 	matrix.select(1)
-
 })
