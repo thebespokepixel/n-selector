@@ -1,41 +1,59 @@
 /* ───────────╮
  │ n-selector │ Single n-way switch channel (gang)
- ╰────────────┴─────────────────────────────────────────────────────────────────*/
-/**
- * This is a test.
- */
+ ╰────────────┴──────────────────────────────────────────────────────────────── */
 
-import EventEmitter from 'events'
-
-class Gang extends EventEmitter {
-	constructor(selections, index = 0, primaryIndex = false) {
-		super()
-		this.selections = selections
-		this.index = index
-		this.isPrimaryIndex = primaryIndex
-
-		this.mode = (function () {
-			switch (mode) {
-				case 'soft':
-					return 0
-				case 'hard':
-					return 1
-				case 'container':
-					return 2
-				case 'keep':
-					return 3
-				default:
-					throw new Error(`Unrecognised mode: ${mode} `)
-			}
-		})()
-	}
-
-	select(mode) {
-		const enumerated = this.modes.indexOf(mode)
-		if (enumerated === -1) {
-			throw new Error(`Unrecognised mode: ${mode} `)
+export class Gang {
+	/**
+	 * Represents a single gang of witch positions.
+	 * @param  {string[]}  members The gang's named positions
+	 * @param  {boolean} primaryIndex Is this gang the primary index?
+	 * @property {number} memberCount Get the number of members in this gang.
+	 * @return {Gang} The Gang object.
+	 */
+	constructor(members, primaryIndex = false) {
+		if (members === undefined || !Array.isArray(members)) {
+			throw new Error('A selection gang requires an array of members as the first parameter.')
 		}
-		this.mode = enumerated
-		return enumerated
+		this.members = members
+		this.index = 0
+		this.isPrimaryIndex = primaryIndex
 	}
+
+	get memberCount() {
+		return this.members.length
+	}
+
+	get isPrimary() {
+		return this.isPrimaryIndex
+	}
+
+	selection(position) {
+		return this.members[Math.floor(position * this.members.length)]
+	}
+
+	position(idx) {
+		return this.indexOf(idx) / this.members.length
+	}
+
+	indexOfMember(id) {
+		const idx = this.members.indexOf(id)
+		if (idx < 0) {
+			throw new Error(`${id} not found.`)
+		}
+		return idx
+	}
+
+	indexOf(idx) {
+		if (idx < 0) {
+			idx = 0
+		}
+		if (idx > this.members.length) {
+			idx = this.members.length
+		}
+		return idx
+	}
+}
+
+export function addGang(members, isPrimary) {
+	return new Gang(members, isPrimary)
 }

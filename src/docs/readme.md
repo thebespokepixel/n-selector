@@ -6,6 +6,8 @@ ${badges}
 
 ## Usage
 
+${usage}
+
 ## Documentation
 Full documentation can be found at [https://markgriffiths.github.io/n-selector/][1]
 

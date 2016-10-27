@@ -1,6 +1,6 @@
 {
   "name": "@thebespokepixel/n-selector",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Smart multi-gang enumerator with global, namespaced event emission for node.js.",
   "main": "index.js",
   "directories": {
@@ -14,7 +14,7 @@
     "test": "xo && snyk test && nyc ava",
     "doc-serve": "documentation serve --watch --theme node_modules/documentation-theme-bespoke --github --config src/docs/documentation.yml --name $npm_package_name  --project-version $npm_package_version src/index.js",
     "doc-build": "documentation build --format html --output docs --theme node_modules/documentation-theme-bespoke --github --config src/docs/documentation.yml --name $npm_package_name  --project-version $npm_package_version src/index.js",
-    "readme": "compile-readme -u src/docs/example.js src/docs/readme.md > readme.md",
+    "readme": "compile-readme -u src/docs/example.md src/docs/readme.md > readme.md",
     "code-climate": "nyc report --reporter=text-lcov | codeclimate-test-reporter",
     "coverage": "nyc ava && nyc report --reporter=lcov --report-dir test/coverage; open test/coverage/lcov-report/index.html",
     "clean": "gulp clean",
@@ -39,11 +39,11 @@
     "owner": "Mark Griffiths @ The Bespoke Pixel"
   },
   "devDependencies": {
-    "@thebespokepixel/cordial": "^0.17.9",
+    "@thebespokepixel/cordial": "^0.17.10",
     "ava": "^0.16.0",
     "codeclimate-test-reporter": "^0.4.0",
     "documentation": "^4.0.0-beta11",
-    "documentation-theme-bespoke": "^0.2.7",
+    "documentation-theme-bespoke": "^0.3.1",
     "greenkeeper-postpublish": "^1.0.1",
     "gulp": "github:gulpjs/gulp#4.0",
     "nyc": "^8.3.2",
@@ -55,19 +55,20 @@
     "esnext": true,
     "ignores": [
       "index.js",
-      "lib/*",
-      "bin/*",
+      "lib/**",
+      "docs/**",
+      "bin/**",
       "test/coverage/**"
     ]
   },
   "dependencies": {
+    "lodash": "^4.16.4",
     "sparkles": "^1.0.0"
   },
   "badges": {
     "github": "MarkGriffiths",
     "npm": "thebespokepixel",
     "name": "n-selector",
-    "style": "flat",
     "providers": {
       "status": {
         "text": "beta",
@@ -117,9 +118,9 @@
       ]
     ]
   },
-  "buildNumber": 6,
+  "buildNumber": 0,
   "engines": {
-    "node": ">=4.0 <8.0"
+    "node": ">=4.0 <9.0"
   },
   "jsnext:main": "lib/index-es.js"
 }

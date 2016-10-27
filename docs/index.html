@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>@thebespokepixel/n-selector 0.0.1 | Documentation</title>
+  <title>@thebespokepixel/n-selector 0.1.0 | Documentation</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link href="assets/css/ace.min.css" rel="stylesheet">
   <link href="assets/fonts/TypoPRO-Hack/TypoPRO-Hack.css" type="text/css" rel="stylesheet" />
@@ -11,9 +11,9 @@
 </head>
 <body class="m0 documentation">
   <div class="flex">
-    <div class="flex-column fixed top-0 bottom-0 px2 pt2 xs-hide overflow-auto max-height-100 sidebar">
+    <div class="flex-column fixed top-0 bottom-0 px2 pt2 max-height-100 sidebar">
       <h3 class="m0 no-anchor">@thebespokepixel/n-selector</h3>
-      <div class="mb1"><code>v0.0.1</code></div>
+      <div class="mb1"><code>v0.1.0</code></div>
       <input
         placeholder="Filter"
         id="filter-input"
@@ -34,16 +34,6 @@
           
             
             <li><a
-              href="#configuration"
-              class="h5 bold black caps">
-              Configuration
-              
-            </a>
-            
-            </li>
-          
-            
-            <li><a
               href="#api"
               class="h5 bold black caps">
               API
@@ -54,39 +44,9 @@
           
             
             <li><a
-              href="#n-selector"
+              href="#constructor"
               class="">
-              n-selector
-              
-            </a>
-            
-            </li>
-          
-            
-            <li><a
-              href="#modulen-selectoruuid"
-              class="">
-              module:n-selector/uuid
-              
-            </a>
-            
-            </li>
-          
-            
-            <li><a
-              href="#uuid"
-              class="">
-              uuid
-              
-            </a>
-            
-            </li>
-          
-            
-            <li><a
-              href="#eventemitter"
-              class="">
-              EventEmitter
+              constructor
               
             </a>
             
@@ -110,30 +70,42 @@
         <a href="http://documentation.js.org/reading-documentation.html">Need help reading this?</a>
       </div>
     </div>
-    <div class="flex-column px2 xs-hide">
-      <h3 class="mb0 no-anchor">@thebespokepixel/n-selector</h3>
+    <div class="flex-column px2 sidespace">
+      <h3 class="m0 no-anchor">@thebespokepixel/n-selector</h3>
     </div>
     <div class="flex-auto px2 pt1">
       
         
           <div class="keyline-top-not py1"><section class="py0 px2 clearfix note">
-	
-	<h3>Usage</h3>
-<p>Example</p>
-
-</section>
-</div>
-        
-      
-        
-          <div class="keyline-top-not py1"><section class="py0 px2 clearfix note">
-	
-	<h3 id="Configuration" class="m0">
-		Configuration
+	<h3 id="usage" class="m0">
+		Usage
 	</h3>
 	
 	
-		<p>In <code>package.json</code>...</p>
+		<p>Think of n-selector as an endlessly extendable multi-way n-gang switch.</p>
+<p>Firstly, it allows the selection of a position by the position of an option in a primary index and then returns a value or an array of all the options that fall under that position.</p>
+<p>Secondly, it allows selection by a simple scalar value (0.0 to 1.0) and can return a value or an array of the options at that position.</p>
+<pre><code>       0.00 ... 0.25 ... 0.50 ... 0.75 ... 1.00
+        |--------|--------|--------|--------|
+Primary |    One    |    Two    |   Three   |
+Gang +1 |    Red    |   Green   |    Blue   |
+Gang +2 |       One       |       Two       |
+
+select('one') - returns ['One', 'Red', One]
+select(2) - returns ['Two', 'Green', 'One']
+position(0.75) - returns ['Three', 'Blue', 'Two']
+</code></pre>
+<h4>Installation</h4>
+<pre><code class="language-shell">npm install --save @thebespokepixel/n-selector
+</code></pre>
+<h4>Examples</h4>
+<pre><code class="language-javascript">import {createSelector} from '@thebespokepixel/n-selector'
+
+const matrix = createSelector(['one', 'two', 'three'], 0)
+
+matrix.select(0) - returns 'one'
+matrix.position(0.5) - returns 'two'
+</code></pre>
 
 	
 </section>
@@ -142,15 +114,14 @@
       
         
           <div class="keyline-top-not py1"><section class="py0 px2 clearfix note">
-	
-	<h3 id="API" class="m0">
+	<h3 id="api" class="m0">
 		API
 	</h3>
-	
 	
 		
 
 	
+	
 </section>
 </div>
         
@@ -160,106 +131,19 @@
 
   
   <div class="clearfix">
-    <h3 class="left m0 panel-title" id="n-selector">
-      n-selector  
+    <h3 class="left m0 panel-title" id="constructor">
+      constructor  <span>→ Gang</span>
     </h3>
     
-      <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/n-selector/blob/2d3a336e2cb6972f7eb1a3a0dfb730d47b69bf7e/src/index.js#L9-L9">src/index.js</a>
+      <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/n-selector/blob/c66269d5ea57a0bf4a90aaee9f381b42b47e080f/src/lib/classes/gang.js#L13-L20">src/lib/classes/gang.js</a>
     
   </div>
   
 
-  <p>Multi-gang (1 x n, 2 x n ... n x n) selection latch and emitter</p>
+  <p>Represents a single gang of witch positions.</p>
 
   
-  
-
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-      
-        
-          <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
-
-  
-  <div class="clearfix">
-    <h3 class="left m0 panel-title" id="modulen-selectoruuid">
-      module:n-selector/uuid  
-    </h3>
-    
-      <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/n-selector/blob/2d3a336e2cb6972f7eb1a3a0dfb730d47b69bf7e/src/lib/uuid.js#L5-L5">src/lib/uuid.js</a>
-    
-  </div>
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-      
-        
-          <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
-
-  
-  <div class="clearfix">
-    <h3 class="left m0 panel-title" id="uuid">
-      uuid  <span>→ <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>
-    </h3>
-    
-      <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/n-selector/blob/2d3a336e2cb6972f7eb1a3a0dfb730d47b69bf7e/src/lib/uuid.js#L16-L18">src/lib/uuid.js</a>
-    
-  </div>
-  
-
-  <p>Calculate a valid RFC4122 UUID</p>
-
-  
-  <div class="pre p1 bg-darken-1 mt0 signature">uuid(a: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>) → <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></div>
+  <div class="pre p1 bg-darken-1 mt0 signature">constructor(members: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>>, primaryIndex: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>](default false)) → Gang</div>
   
   
 
@@ -275,7 +159,15 @@
       
         <div class="space-bottom0">
           <div>
-            <span class="code bold">a</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code> Recursive parameter used to build UUID.
+            <span class="code bold">members</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>>)</code> The gang's named positions
+
+          </div>
+          
+        </div>
+      
+        <div class="space-bottom0">
+          <div>
+            <span class="code bold">primaryIndex</span> <code class="quiet">([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>](default false))</code> Is this gang the primary index?
 
           </div>
           
@@ -285,66 +177,27 @@
   
 
   
+    <div class="py1 quiet mt1 prose-big">Properties</div>
+    <div>
+      
+        <div class="space-bottom0">
+          <span class="code bold">memberCount</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+          : Get the number of members in this gang.
+
+          
+        </div>
+      
+    </div>
+  
 
   
     
       <div class="py1 quiet mt1 prose-big">Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>:
-        Resultant UUID
+      <code>Gang</code>:
+        The Gang object.
 
       
     
-  
-
-  
-
-  
-    <div class="py1 quiet mt1 prose-big">Example</div>
-      
-      
-      <pre class="p1 overflow-auto rounded bg-darken-1"><span class="hljs-keyword">import</span> {uuid} <span class="hljs-keyword">from</span> <span class="hljs-string">'./uuid'</span>
-<span class="hljs-keyword">const</span> UUID = uuid()</pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-      
-        
-          <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
-
-  
-  <div class="clearfix">
-    <h3 class="left m0 panel-title" id="eventemitter">
-      EventEmitter  
-    </h3>
-    
-      <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/n-selector/blob/2d3a336e2cb6972f7eb1a3a0dfb730d47b69bf7e/src/lib/classes/gang.js#L8-L8">src/lib/classes/gang.js</a>
-    
-  </div>
-  
-
-  <p>This is a test.</p>
-
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-
-  
-
   
 
   
