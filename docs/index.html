@@ -96,16 +96,14 @@ select(2) - returns ['Two', 'Green', 'One']
 position(0.75) - returns ['Three', 'Blue', 'Two']
 </code></pre>
 <h4>Installation</h4>
-<pre><code class="language-shell">npm install --save @thebespokepixel/n-selector
-</code></pre>
+<pre class='hljs'>npm install --save @thebespokepixel/n-selector</pre>
 <h4>Examples</h4>
-<pre><code class="language-javascript">import {createSelector} from '@thebespokepixel/n-selector'
+<pre class='hljs'><span class="hljs-keyword">import</span> {createSelector} <span class="hljs-keyword">from</span> <span class="hljs-string">'@thebespokepixel/n-selector'</span>
 
-const matrix = createSelector(['one', 'two', 'three'], 0)
+<span class="hljs-keyword">const</span> matrix = createSelector([<span class="hljs-string">'one'</span>, <span class="hljs-string">'two'</span>, <span class="hljs-string">'three'</span>], <span class="hljs-number">0</span>)
 
-matrix.select(0) - returns 'one'
-matrix.position(0.5) - returns 'two'
-</code></pre>
+matrix.select(<span class="hljs-number">0</span>) - returns <span class="hljs-string">'one'</span>
+matrix.position(<span class="hljs-number">0.5</span>) - returns <span class="hljs-string">'two'</span></pre>
 
 	
 </section>
@@ -135,7 +133,7 @@ matrix.position(0.5) - returns 'two'
       constructor  <span>→ Gang</span>
     </h3>
     
-      <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/n-selector/blob/473d110de72ebed819cadc7f1867ecc960037b6a/src/lib/classes/gang.js#L13-L20">src/lib/classes/gang.js</a>
+      <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/n-selector/blob/3b5a6920b6fe846087f745e409d194ef417641eb/src/lib/classes/gang.js#L13-L20">src/lib/classes/gang.js</a>
     
   </div>
   
@@ -143,7 +141,7 @@ matrix.position(0.5) - returns 'two'
   <p>Represents a single gang of witch positions.</p>
 
   
-  <div class="pre p1 bg-darken-1 mt0 signature">constructor(members: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>>, primaryIndex: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>](default false)) → Gang</div>
+  <div class="pre p1 bg-darken-1 mt0 signature">constructor(members: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>>, primaryIndex: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?= .memb) → Gang</div>
   
   
 
@@ -167,7 +165,7 @@ matrix.position(0.5) - returns 'two'
       
         <div class="space-bottom0">
           <div>
-            <span class="code bold">primaryIndex</span> <code class="quiet">([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>](default false))</code> Is this gang the primary index?
+            <span class="code bold">primaryIndex</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?= .memb)</code> Is this gang the primary index?
 
           </div>
           
