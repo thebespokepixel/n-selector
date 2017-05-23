@@ -1,5 +1,7 @@
 # @thebespokepixel/n-selector
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/MarkGriffiths/n-selector.svg)](https://greenkeeper.io/)
+
 > Smart multi-gang enumerator with global, namespaced event emission for node.js.
 
 ##### Status
