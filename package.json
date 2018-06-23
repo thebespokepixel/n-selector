@@ -7,6 +7,10 @@
     "test": "test"
   },
   "module": "index.mjs",
+  "files": [
+    "index.js",
+    "index.mjs"
+  ],
   "scripts": {
     "test": "xo && nyc ava",
     "doc-serve": "documentation serve --watch --theme node_modules/documentation-theme-bespoke --github --config src/docs/documentation.yml --name $npm_package_name  --project-version $npm_package_version src/index.js",
