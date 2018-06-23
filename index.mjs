@@ -1,19 +1,13 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var crypto = require('crypto');
-var _isInteger = _interopDefault(require('lodash/isInteger'));
-var _maxBy = _interopDefault(require('lodash/maxBy'));
-var _filter = _interopDefault(require('lodash/filter'));
-var _head = _interopDefault(require('lodash/head'));
-var _map = _interopDefault(require('lodash/map'));
-var sparkles = _interopDefault(require('sparkles'));
+import { randomBytes } from 'crypto';
+import _isInteger from 'lodash/isInteger';
+import _maxBy from 'lodash/maxBy';
+import _filter from 'lodash/filter';
+import _head from 'lodash/head';
+import _map from 'lodash/map';
+import sparkles from 'sparkles';
 
 
-const uuid = a => a ? ((a ^ crypto.randomBytes(1)[0] % 16) >> a / 4).toString(16) : ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, uuid);
+const uuid = a => a ? ((a ^ randomBytes(1)[0] % 16) >> a / 4).toString(16) : ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, uuid);
 
 class Gang {
   constructor(members, primaryIndex = false) {
@@ -126,5 +120,4 @@ function createSelector(matrix, selection = 0, ns) {
   return new NSelector(matrix, selection, ns);
 }
 
-exports.NSelector = NSelector;
-exports.createSelector = createSelector;
+export { NSelector, createSelector };
