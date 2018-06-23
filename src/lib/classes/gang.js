@@ -8,7 +8,6 @@ export class Gang {
 	 * @param  {string[]}  members The gang's named positions
 	 * @param  {boolean} primaryIndex Is this gang the primary index?
 	 * @property {number} memberCount Get the number of members in this gang.
-	 * @return {Gang} The Gang object.
 	 */
 	constructor(members, primaryIndex = false) {
 		if (members === undefined || !Array.isArray(members)) {

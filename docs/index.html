@@ -21,48 +21,49 @@
         type="text" />
       <div id="toc">
         <ul class="list-reset h5 py1-ul">
-          
-            
+
+
             <li><a
               href="#usage"
               class="h5 bold black caps">
               Usage
-              
+
             </a>
-            
+
             </li>
-          
-            
+
+
             <li><a
               href="#api"
               class="h5 bold black caps">
               API
-              
+
             </a>
-            
+
             </li>
-          
-            
+
+
             <li><a
               href="#constructor"
               class="">
               constructor
-              
+
             </a>
-            
+
             </li>
-          
+
         </ul>
       </div>
       <div class="badges"><p><a href="https://github.com/MarkGriffiths/n-selector" title="Github"><img src="https://img.shields.io/badge/github-source-4E73B6.svg?style=flat" alt="Github"></a> <a href="https://travis-ci.org/MarkGriffiths/n-selector" title="Travis"><img src="https://img.shields.io/travis/MarkGriffiths/n-selector.svg?branch=master&#x26;style=flat" alt="Travis"></a> <br>
 </p>
- 
-<p><a href="https://codeclimate.com/github/MarkGriffiths/n-selector" title="Code-climate"><img src="https://codeclimate.com/github/MarkGriffiths/n-selector/badges/gpa.svg?style=flat" alt="Code-climate"></a> <a href="https://codeclimate.com/github/MarkGriffiths/n-selector/coverage" title="Coverage"><img src="https://codeclimate.com/github/MarkGriffiths/n-selector/badges/coverage.svg?style=flat" alt="Coverage"></a> <br>
+
+<p><a href="https://codeclimate.com/github/MarkGriffiths/n-selector" title="Code-climate"><img src="https://codeclimate.com/github/MarkGriffiths/n-selector/badges/gpa.svg?style=flat" alt="Code-climate"></a><br>
+  <a href="https://codeclimate.com/github/MarkGriffiths/n-selector/coverage" title="Coverage"><img src="https://codeclimate.com/github/MarkGriffiths/n-selector/badges/coverage.svg?style=flat" alt="Coverage"></a> <br>
 </p>
- 
+
 <p><a href="https://david-dm.org/MarkGriffiths/n-selector/master" title="David"><img src="https://img.shields.io/david/MarkGriffiths/n-selector.svg?branch=master&#x26;style=flat" alt="David"></a> <br>
 </p>
- 
+
 <br>
 
 </div>
@@ -74,14 +75,14 @@
       <h3 class="m0 no-anchor">@thebespokepixel/n-selector</h3>
     </div>
     <div class="flex-auto px2 pt1">
-      
-        
+
+
           <div class="keyline-top-not py1"><section class="py0 px2 clearfix note">
 	<h3 id="usage" class="m0">
 		Usage
 	</h3>
-	
-	
+
+
 		<p>Think of n-selector as an endlessly extendable multi-way n-gang switch.</p>
 <p>Firstly, it allows the selection of a position by the position of an option in a primary index and then returns a value or an array of all the options that fall under that position.</p>
 <p>Secondly, it allows selection by a simple scalar value (0.0 to 1.0) and can return a value or an array of the options at that position.</p>
@@ -105,112 +106,112 @@ position(0.75) - returns ['Three', 'Blue', 'Two']
 matrix.select(<span class="hljs-number">0</span>) - returns <span class="hljs-string">'one'</span>
 matrix.position(<span class="hljs-number">0.5</span>) - returns <span class="hljs-string">'two'</span></pre>
 
-	
+
 </section>
 </div>
-        
-      
-        
+
+
+
           <div class="keyline-top-not py1"><section class="py0 px2 clearfix note">
 	<h3 id="api" class="m0">
 		API
 	</h3>
-	
-		
 
-	
-	
+
+
+
+
 </section>
 </div>
-        
-      
-        
+
+
+
           <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
 
-  
+
   <div class="clearfix">
     <h3 class="left m0 panel-title" id="constructor">
       constructor  <span>→ Gang</span>
     </h3>
-    
+
       <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/n-selector/blob/f5066dbbd59af1b2867f95ee452e1f8752900e8b/src/lib/classes/gang.js#L13-L20">src/lib/classes/gang.js</a>
-    
+
   </div>
-  
+
 
   <p>Represents a single gang of witch positions.</p>
 
-  
+
   <div class="pre p1 bg-darken-1 mt0 signature">constructor(members: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>>, primaryIndex: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?= .memb) → Gang</div>
-  
-  
 
-  
-  
-  
-  
-  
 
-  
+
+
+
+
+
+
+
+
     <div class="py1 quiet mt1 prose-big">Parameters</div>
     <div class="prose">
-      
+
         <div class="space-bottom0">
           <div>
             <span class="code bold">members</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>>)</code> The gang's named positions
 
           </div>
-          
+
         </div>
-      
+
         <div class="space-bottom0">
           <div>
             <span class="code bold">primaryIndex</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?= .memb)</code> Is this gang the primary index?
 
           </div>
-          
-        </div>
-      
-    </div>
-  
 
-  
+        </div>
+
+    </div>
+
+
+
     <div class="py1 quiet mt1 prose-big">Properties</div>
     <div>
-      
+
         <div class="space-bottom0">
           <span class="code bold">memberCount</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
           : Get the number of members in this gang.
 
-          
-        </div>
-      
-    </div>
-  
 
-  
-    
+        </div>
+
+    </div>
+
+
+
+
       <div class="py1 quiet mt1 prose-big">Returns</div>
       <code>Gang</code>:
         The Gang object.
 
-      
-    
-  
 
-  
 
-  
 
-  
 
-  
 
-  
+
+
+
+
+
+
+
+
 </section>
 
-        
-      
+
+
     </div>
   </div>
   <script src="assets/js/anchor.min.js"></script>
