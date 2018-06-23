@@ -53,7 +53,8 @@
     "ignores": [
       "index.js",
       "index.mjs",
-      "test/coverage/**"
+      "test/coverage/**",
+      "docs"
     ]
   },
   "dependencies": {
