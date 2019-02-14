@@ -1,6 +1,6 @@
 {
   "name": "@thebespokepixel/n-selector",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Smart multi-gang enumerator with global, namespaced event emission for node.js.",
   "main": "index.js",
   "directories": {
@@ -42,7 +42,7 @@
     "ava": "^1.2.1",
     "babel-plugin-lodash": "^3.3.4",
     "documentation": "^9.1.1",
-    "documentation-theme-bespoke": "^0.4.6",
+    "documentation-theme-bespoke": "^0.4.7",
     "gulp": "^4.0.0",
     "gulp-better-rollup": "^3.4.0",
     "gulp-rename": "^1.4.0",
