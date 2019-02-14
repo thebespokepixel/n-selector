@@ -60,5 +60,6 @@ export function createSelector(matrix, selection = 0, ns) {
 	if (matrix === undefined || !Array.isArray(matrix)) {
 		throw new Error('Selector requires an array (or an array of arrays) as the first parameter.')
 	}
+
 	return new NSelector(matrix, selection, ns)
 }

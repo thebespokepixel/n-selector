@@ -13,6 +13,7 @@ export class Gang {
 		if (members === undefined || !Array.isArray(members)) {
 			throw new Error('A selection gang requires an array of members as the first parameter.')
 		}
+
 		this.members = members
 		this.index = 0
 		this.isPrimaryIndex = primaryIndex
@@ -39,6 +40,7 @@ export class Gang {
 		if (idx < 0) {
 			throw new Error(`${id} not found.`)
 		}
+
 		return idx
 	}
 
@@ -46,9 +48,11 @@ export class Gang {
 		if (idx < 0) {
 			idx = 0
 		}
+
 		if (idx > this.members.length) {
 			idx = this.members.length
 		}
+
 		return idx
 	}
 }

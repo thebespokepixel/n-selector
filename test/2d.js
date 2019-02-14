@@ -2,17 +2,17 @@ import test from 'ava'
 import sparkles from 'sparkles'
 import {createSelector} from '..'
 
-test(`Simple 2d matrix`, t => {
+test('Simple 2d matrix', t => {
 	const matrix = createSelector([['one', 'two', 'three'], ['red', 'green', 'blue']], 'two')
 	t.deepEqual(matrix.selected, ['two', 'green'])
 })
 
-test(`Assymetric 2d matrix`, t => {
+test('Assymetric 2d matrix', t => {
 	const matrix = createSelector([['one', 'two', 'three', 'four'], ['red', 'green', 'blue']], 'three')
 	t.deepEqual(matrix.selected, ['three', 'green'])
 })
 
-test(`Simple 2d matrix with select`, t => {
+test('Simple 2d matrix with select', t => {
 	t.plan(3)
 	const matrix = createSelector([['one', 'two', 'three'], ['red', 'green', 'blue']], 'two')
 	t.deepEqual(matrix.selected, ['two', 'green'])
@@ -21,7 +21,7 @@ test(`Simple 2d matrix with select`, t => {
 	t.deepEqual(matrix.selected, ['three', 'blue'])
 })
 
-test.cb(`Simple 2d matrix with select and named emission`, t => {
+test.cb('Simple 2d matrix with select and named emission', t => {
 	t.plan(2)
 	const matrix = createSelector([['one', 'two', 'three'], ['red', 'green', 'blue']], 'two', 'ava-3')
 	t.deepEqual(matrix.selected, ['two', 'green'])
@@ -34,7 +34,7 @@ test.cb(`Simple 2d matrix with select and named emission`, t => {
 	matrix.select('three')
 })
 
-test.cb(`Simple 2d matrix with select and direct emission`, t => {
+test.cb('Simple 2d matrix with select and direct emission', t => {
 	t.plan(2)
 	const matrix = createSelector([['one', 'two', 'three'], ['red', 'green', 'blue']], 1, 'ava-4')
 	t.deepEqual(matrix.selected, ['two', 'green'])
