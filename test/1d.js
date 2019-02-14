@@ -2,12 +2,12 @@ import test from 'ava'
 import sparkles from 'sparkles'
 import {createSelector} from '..'
 
-test(`Simple 1d matrix`, t => {
+test('Simple 1d matrix', t => {
 	const matrix = createSelector(['one', 'two', 'three'], 0)
 	t.is(matrix.selected, 'one')
 })
 
-test(`Simple 1d matrix with select`, t => {
+test('Simple 1d matrix with select', t => {
 	t.plan(3)
 	const matrix = createSelector(['one', 'two', 'three'], 0)
 	t.is(matrix.selected, 'one')
@@ -16,7 +16,7 @@ test(`Simple 1d matrix with select`, t => {
 	t.is(matrix.selected, 'two')
 })
 
-test.cb(`Simple 1d matrix with select and named emission`, t => {
+test.cb('Simple 1d matrix with select and named emission', t => {
 	t.plan(2)
 	const matrix = createSelector(['one', 'two', 'three'], 0, 'ava-1')
 	t.is(matrix.selected, 'one')
@@ -29,7 +29,7 @@ test.cb(`Simple 1d matrix with select and named emission`, t => {
 	matrix.select(0)
 })
 
-test.cb(`Simple 1d matrix with select and direct emission`, t => {
+test.cb('Simple 1d matrix with select and direct emission', t => {
 	t.plan(2)
 	const matrix = createSelector(['one', 'two', 'three'], 0, 'ava-2')
 	t.is(matrix.selected, 'one')
