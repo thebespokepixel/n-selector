@@ -1,6 +1,6 @@
 {
   "name": "@thebespokepixel/n-selector",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "Smart multi-gang enumerator with global, namespaced event emission for node.js.",
   "main": "index.js",
   "directories": {
