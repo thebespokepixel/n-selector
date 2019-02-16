@@ -2,9 +2,12 @@
  │ n-selector │ Single n-way switch channel (gang)
  ╰────────────┴──────────────────────────────────────────────────────────────── */
 
+/**
+ * @private
+ */
 export class Gang {
 	/**
-	 * Represents a single gang of witch positions.
+	 * Represents a single gang of switch positions.
 	 * @param  {string[]}  members The gang's named positions
 	 * @param  {boolean} primaryIndex Is this gang the primary index?
 	 * @property {number} memberCount Get the number of members in this gang.
@@ -56,7 +59,13 @@ export class Gang {
 		return idx
 	}
 }
-
+/**
+ * Add a gang of members.
+ * @private
+ * @param {Array}  members   Gang members.
+ * @param {Boolean} isPrimary Is the primary gang.
+ * @returns {Gang} Gang object.
+ */
 export function addGang(members, isPrimary) {
 	return new Gang(members, isPrimary)
 }
