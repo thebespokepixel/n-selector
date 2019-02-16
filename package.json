@@ -36,13 +36,13 @@
     "owner": "Mark Griffiths @ The Bespoke Pixel"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
+    "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
     "acorn": "^6.1.0",
     "ava": "^1.2.1",
     "babel-plugin-lodash": "^3.3.4",
     "documentation": "^9.1.1",
-    "documentation-theme-bespoke": "^0.4.7",
+    "documentation-theme-bespoke": "^0.4.10",
     "gulp": "^4.0.0",
     "gulp-better-rollup": "^3.4.0",
     "gulp-rename": "^1.4.0",
@@ -72,10 +72,6 @@
     "codeclimate": "29b2c0ee0ca847e1f040",
     "name": "n-selector",
     "providers": {
-      "status": {
-        "text": "beta",
-        "color": "blue"
-      },
       "aux1": {
         "title": "github",
         "text": "source",
@@ -86,7 +82,6 @@
     "readme": {
       "Status": [
         [
-          "status",
           "npm",
           "travis",
           "david"
