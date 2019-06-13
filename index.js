@@ -4,13 +4,13 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var crypto = require('crypto');
 var _isInteger = _interopDefault(require('lodash/isInteger'));
 var _maxBy = _interopDefault(require('lodash/maxBy'));
 var _filter = _interopDefault(require('lodash/filter'));
 var _head = _interopDefault(require('lodash/head'));
 var _map = _interopDefault(require('lodash/map'));
 var sparkles = _interopDefault(require('sparkles'));
+var crypto = require('crypto');
 
 const uuid = a => a ? ((a ^ crypto.randomBytes(1)[0] % 16) >> a / 4).toString(16) : ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, uuid);
 
