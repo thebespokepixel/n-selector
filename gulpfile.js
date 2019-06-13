@@ -6,7 +6,7 @@ const resolve = require('rollup-plugin-node-resolve')
 const commonjs = require('rollup-plugin-commonjs')
 const lodash = require('babel-plugin-lodash')
 
-const external = id => !id.startsWith('.') && !id.startsWith('/') && !id.startsWith('\0')
+const external = id => !id.startsWith('src') && !id.startsWith('.') && !id.startsWith('/') && !id.startsWith('\0')
 
 const babelConfig = {
 	plugins: [lodash],
