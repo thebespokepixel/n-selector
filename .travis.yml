@@ -8,14 +8,15 @@ branches:
 language: node_js
 node_js:
   - stable
+  - 11
   - 10
   - 9
   - 8
 env:
   global:
-    - CC_TEST_REPORTER_ID=012c23c52acfc69e8e093fead45270c7a65abf63bc7bfc431955e1b2eb7d890b
+    - CC_TEST_REPORTER_ID=38aa500b8b54a16b7201c6c2c78a6abcc5719e39353cfaff9c200c329f0496a2
 before_install:
-  - '[[ $(node -v) =~ ^v10.*$ ]] || npm install -g npm@latest'
+  - '[[ $(node -v) =~ ^v12.*$ ]] || npm install -g npm@latest'
   - npm install -g greenkeeper-lockfile
 install: npm install
 before_script:
