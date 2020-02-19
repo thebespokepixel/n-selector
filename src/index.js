@@ -103,7 +103,7 @@ export class NSelector {
  * @param  {String} ns        Sparkles emitter namespace.
  * @return {NSelector} NSelector ganged selector.
  */
-export function createSelector(matrix, selection = 0, ns) {
+export function createSelector(matrix, selection = 0, ns = uuid()) {
 	if (matrix === undefined || !Array.isArray(matrix)) {
 		throw new Error('Selector requires an array (or an array of arrays) as the first parameter.')
 	}
