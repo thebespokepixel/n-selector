@@ -12,7 +12,7 @@ Primary |    One    |    Two    |   Three   |
 Gang +1 |    Red    |   Green   |    Blue   |
 Gang +2 |       One       |       Two       |
 
-select('one') - returns ['One', 'Red', One]
+select('one') - returns ['One', 'Red', 'One']
 select(2) - returns ['Two', 'Green', 'One']
 position(0.75) - returns ['Three', 'Blue', 'Two']
 ```
