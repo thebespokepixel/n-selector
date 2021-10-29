@@ -1,4 +1,3 @@
-export var __esModule: boolean;
 export class NSelector {
     constructor(matrix: any, selection: any, ns?: any);
     ns: any;
