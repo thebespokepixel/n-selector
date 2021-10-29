@@ -7,8 +7,7 @@ branches:
 language: node_js
 node_js:
   - stable
-  - 12
-  - 10
+  - "--lts"
 env:
   global:
     - CC_TEST_REPORTER_ID=38aa500b8b54a16b7201c6c2c78a6abcc5719e39353cfaff9c200c329f0496a2

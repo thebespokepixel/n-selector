@@ -1,8 +1,9 @@
 /* ───────────╮
  │ n-selector │
  ╰────────────┴──────────────────────────────────────────────────────────────── */
+/* eslint no-bitwise: 0 */
 
-import {randomBytes} from 'crypto'
+import {randomBytes} from 'node:crypto'
 
 /**
  * Calculate a valid RFC4122 UUID
@@ -14,8 +15,8 @@ import {randomBytes} from 'crypto'
  * import uuid from './uuid'
  * const UUID = uuid()
  */
-const uuid = a => a ?
-	((a ^	randomBytes(1)[0] % 16) >> a / 4).toString(16) :
-	([1e7] +	-1e3 + -4e3 + -8e3 +	-1e11).replace(/[018]/g, uuid)
+const uuid = a => a
+	? ((a ^	randomBytes(1)[0] % 16) >> a / 4).toString(16)
+	: ([1e7] +	-1e3 + -4e3 + -8e3 +	-1e11).replace(/[018]/g, uuid)
 
 export default uuid

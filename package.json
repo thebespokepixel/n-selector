@@ -1,21 +1,26 @@
 {
   "name": "@thebespokepixel/n-selector",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Smart multi-gang enumerator with global, namespaced event emission for node.js.",
   "main": "index.js",
+  "types": "index.d.ts",
+  "type": "module",
   "directories": {
     "test": "test"
   },
   "module": "index.mjs",
   "files": [
     "index.js",
-    "index.mjs"
+    "index.d.ts"
   ],
   "scripts": {
-    "test": "xo && nyc ava",
+    "build": "rollup -c && npm run readme",
+    "test": "xo && c8 --reporter=text ava",
     "doc-serve": "documentation serve --watch --theme node_modules/documentation-theme-bespoke --github --config src/docs/documentation.yml --project-name $npm_package_name  --project-version $npm_package_version src/index.js",
     "doc-build": "documentation build --format html --output docs --theme node_modules/documentation-theme-bespoke --github --config src/docs/documentation.yml --project-name $npm_package_name  --project-version $npm_package_version src/index.js",
-    "readme": "compile-readme -u src/docs/example.md src/docs/readme.md > readme.md"
+    "readme": "compile-readme -u src/docs/example.md src/docs/readme.md > readme.md",
+    "coverage": "c8 --reporter=lcov ava; open test/coverage/lcov-report/index.html",
+    "prepublishOnly": "npx -p typescript tsc index.js --declaration --allowJs --emitDeclarationOnly"
   },
   "repository": {
     "type": "git",
@@ -36,45 +41,34 @@
     "owner": "Mark Griffiths @ The Bespoke Pixel"
   },
   "devDependencies": {
-    "@ava/babel": "^1.0.1",
-    "@babel/core": "^7.10.5",
-    "@babel/preset-env": "^7.10.4",
-    "ava": "^3.10.1",
-    "babel-plugin-lodash": "^3.3.4",
-    "documentation-theme-bespoke": "^1.1.6",
-    "gulp": "^4.0.2",
-    "gulp-better-rollup": "^4.0.1",
-    "gulp-rename": "^2.0.0",
-    "nyc": "^15.1.0",
-    "rollup": "^2.21.0",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "xo": "^0.32.1"
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@types/estree": "^0.0.50",
+    "ava": "^4.0.0-alpha.2",
+    "c8": "^7.10.0",
+    "documentation-theme-bespoke": "^2.0.9",
+    "rollup": "^2.58.3",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "xo": "^0.46.3"
   },
   "xo": {
     "semicolon": false,
     "esnext": true,
     "ignores": [
       "index.js",
-      "index.mjs",
+      "index.d.ts",
       "test/coverage/**",
       "docs"
     ]
   },
-  "ava": {
-    "babel": true,
-    "files": [
-      "test/*.js"
-    ]
-  },
   "dependencies": {
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "sparkles": "^1.0.1"
   },
   "badges": {
     "github": "thebespokepixel",
     "npm": "thebespokepixel",
+    "libraries-io": "TheBespokePixel",
     "codeclimate": "396fea93d86cd697a911",
     "name": "n-selector",
     "providers": {
@@ -89,7 +83,7 @@
       "Publishing Status": [
         [
           "npm",
-          "david"
+          "libraries-io-npm"
         ],
         [
           "travis-com",
@@ -99,8 +93,7 @@
       "Development Status": [
         [
           "travis-com-dev",
-          "david-dev",
-          "david-devdeps-dev"
+          "libraries-io-github"
         ],
         [
           "snyk",
@@ -124,7 +117,7 @@
       ],
       [
         "snyk",
-        "david"
+        "libraries-io-npm"
       ]
     ]
   },
