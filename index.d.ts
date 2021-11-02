@@ -26,10 +26,10 @@ export class NSelector {
     findSelectionIndex(idx: string): number;
     /**
      * Find the position of the ID string.
-     * @param  {integer|string} id The ID to find.
+     * @param  {number|string} id The ID to find.
      * @return {string}    [description]
      */
-    findSelectionIndexByID(id: any | string): string;
+    findSelectionIndexByID(id: number | string): string;
     /**
      * Get currently selected item.
      * @return {any} Selected value.

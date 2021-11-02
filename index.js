@@ -112,7 +112,7 @@ class NSelector {
 	}
 	/**
 	 * Find the position of the ID string.
-	 * @param  {integer|string} id The ID to find.
+	 * @param  {number|string} id The ID to find.
 	 * @return {string}    [description]
 	 */
 	findSelectionIndexByID(id) {
