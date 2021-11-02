@@ -14,8 +14,8 @@ import {addGang} from './lib/classes/gang'
 export class NSelector {
 	/**
 	 * @param  {Array[]} matrix    An array or array of arrays of selectable items.
-	 * @param  {Number} selection Current selection.
-	 * @param  {String} ns        Sparkles namespace.
+	 * @param  {number} selection Current selection.
+	 * @param  {string} ns        Sparkles namespace.
 	 */
 	constructor(matrix, selection, ns = uuid()) {
 		this.ns = ns
@@ -33,7 +33,7 @@ export class NSelector {
 
 	/**
 	 * Find the largest (maximal) index in the selector.
-	 * @return {Number} Largest index value.
+	 * @return {number} Largest index value.
 	 */
 	findLargestIndex() {
 		return _.maxBy(this.matrix, member => member.memberCount)
@@ -41,8 +41,8 @@ export class NSelector {
 
 	/**
 	 * Find the primary index.
-	 * @param  {String} idx The index to find.
-	 * @return {Number}     The position of the index.
+	 * @param  {string} idx The index to find.
+	 * @return {number}     The position of the index.
 	 */
 	findSelectionIndex(idx) {
 		return this.primary.indexOf(idx)
@@ -50,8 +50,8 @@ export class NSelector {
 
 	/**
 	 * Find the position of the ID string.
-	 * @param  {integer|String} id The ID to find.
-	 * @return {String}    [description]
+	 * @param  {number|string} id The ID to find.
+	 * @return {string}    [description]
 	 */
 	findSelectionIndexByID(id) {
 		return this.findSelectionIndex(_.isInteger(id) ?
@@ -60,7 +60,7 @@ export class NSelector {
 
 	/**
 	 * Get currently selected item.
-	 * @return {Value} Selected value.
+	 * @return {any} Selected value.
 	 */
 	get selected() {
 		const result = _.map(this.matrix, member => member.selection(this.selectedPosition))
@@ -69,7 +69,7 @@ export class NSelector {
 
 	/**
 	 * Get Sparkles namespace
-	 * @return {String} Namespace.
+	 * @return {string} Namespace.
 	 */
 	get namespace() {
 		return this.ns
@@ -85,8 +85,8 @@ export class NSelector {
 
 	/**
 	 * Select an index in the selector.
-	 * @param  {Number} id Index.
-	 * @return {Value} Returned value.
+	 * @param  {number} id Index.
+	 * @return {any} Returned value.
 	 */
 	select(id) {
 		this.selectedIndex = this.findSelectionIndexByID(id)
@@ -99,8 +99,8 @@ export class NSelector {
 /**
  * Create a new n-selector.
  * @param  {Array[]} matrix    Array or array of arrays of selectable options.
- * @param  {Number} selection Current selection.
- * @param  {String} ns        Sparkles emitter namespace.
+ * @param  {number} selection Current selection.
+ * @param  {string} ns        Sparkles emitter namespace.
  * @return {NSelector} NSelector ganged selector.
  */
 export function createSelector(matrix, selection = 0, ns = uuid()) {
